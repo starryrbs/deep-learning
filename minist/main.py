@@ -104,7 +104,6 @@ def show():
     network.load_state_dict(torch.load('model.pth'))
     examples = enumerate(test_loader)
     batch_idx, (example_data, example_targets) = next(examples)
-    batch_idx, (example_data, example_targets) = next(examples)
     with torch.no_grad():
         output = network(example_data)
     for i in range(6):
@@ -125,4 +124,4 @@ def train_model():
 
 
 if __name__ == '__main__':
-    train_model()
+    show()
